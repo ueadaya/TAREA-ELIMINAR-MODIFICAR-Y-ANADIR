@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Facturas{% endblock %}
+{% block content %}
+<h2>Lista de Facturas</h2>
+<a href="/facturas/crear" class="btn btn-primary">Nueva Factura</a>
+<table class="table table-bordered mt-3">
+  <tr>
+    <th>ID</th><th>Número</th><th>Fecha</th><th>Cliente</th><th>Acciones</th>
+  </tr>
+  {% for f in facturas %}
+  <tr>
+    <td>{{ f.id_factura }}</td>
+    <td>{{ f.numero_factura }}</td>
+    <td>{{ f.fecha }}</td>
+    <td>{{ f.nombre }} {{ f.apellido }}</td>
+    <td>
+      <a href="/facturas/eliminar/{{ f.id_factura }}" class="btn btn-danger">Eliminar</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

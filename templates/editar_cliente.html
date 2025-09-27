@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Editar Cliente{% endblock %}
+{% block content %}
+<h2>Editar Cliente</h2>
+<form method="post">
+  <input class="form-control" name="nombre" value="{{ cliente.nombre }}" required><br>
+  <input class="form-control" name="apellido" value="{{ cliente.apellido }}" required><br>
+  <input class="form-control" type="email" name="correo" value="{{ cliente.correo }}" required><br>
+  <input class="form-control" name="telefono" value="{{ cliente.telefono }}"><br>
+  <button class="btn btn-primary" type="submit">Actualizar</button>
+</form>
+{% endblock %}
